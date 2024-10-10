@@ -15,7 +15,7 @@ function CourseListPage() {
     <ListPage
       variant="catalog"
       title="모든 도전"
-      description="직접 도전을 신청하세요."
+      description="오늘도 도전하는 당신 ! 정말 멋지네요"
     >
       <form className={searchBarStyles.form}>
         <input
@@ -29,7 +29,7 @@ function CourseListPage() {
         </button>
       </form>
 
-      <p className={styles.count}>총 0개 코스</p>
+      <p className={styles.count}>총 0개 도전</p>
 
     </ListPage>
   );
