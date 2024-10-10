@@ -29,11 +29,6 @@ function Nav() {
             </NavLink>
           </li>
           <li>
-            <NavLink style={getLinkStyle} to="/mypage">
-              마이페이지
-            </NavLink>
-          </li>
-          <li>
             <UserMenu />
           </li>
         </ul>
