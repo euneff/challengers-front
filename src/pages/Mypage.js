@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Mypage.scss';
 
 function Mypage() {
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const [showRecentlyViewed, setShowRecentlyViewed] = useState(false);
+
+  // 예시 도전 목록 - 실제 데이터는 API로 가져올 수 있습니다)
+  const challenges = [
+    { id: 1, title: '도전 1' },
+    { id: 2, title: '도전 2' },
+    { id: 3, title: '도전 3' },
+  ];
+
+  const handleViewChallenge = (challenge) => {
+    setRecentlyViewed((prev) => [...prev, challenge]);
+  };
+
+  const toggleRecentlyViewed = () => {
+    setShowRecentlyViewed(!showRecentlyViewed);
+  };
   return (
     
     <div className="mypage">
@@ -42,7 +59,7 @@ function Mypage() {
             <p className="title">마이페이지</p>
             <div className="boxList">
               <button className="boxLists">정보수정</button>
-              <button className="boxLists">최근 본 도전</button>
+              <button className="boxLists" onClick={toggleRecentlyViewed}>최근 본 도전</button>
               <button className="boxLists">고객센터</button>
               <button className="boxLists">회원탈퇴</button>
             </div>
@@ -58,6 +75,22 @@ function Mypage() {
           </div>
         </div>
       </div>
+      
+      {/* 최근 본 도전 목록 표시 */}
+      {showRecentlyViewed && (
+        <div className="recentlyViewed">
+          <h3> 최근 본 도전 목록 </h3>
+          {recentlyViewed.length > 0 ?(
+            recentlyViewed.map((challenge)=>(
+              <div key = {challenge.id}>
+                <p>{challenge.title}</p>
+              </div>
+            ))
+          ) : (
+            <p>최근 본 도전이 없습니다.</p>
+          )}
+          </div>
+      )}
     </div>
   );
 }

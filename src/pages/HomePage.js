@@ -2,6 +2,7 @@ import Button from '../components/Button';
 import Container from '../components/Container';
 import Lined from '../components/Lined';
 import styles from './HomePage.module.css';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
@@ -19,7 +20,9 @@ function HomePage() {
             보상금까지 !!!
           </p>
           <div>
-            <Button>도전자들 후기</Button>
+            <Link to="/review">
+              <Button>도전자들 후기</Button>
+            </Link>
           </div>
         </div>
         

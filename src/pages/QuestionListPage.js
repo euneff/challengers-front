@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getQuestions } from '../api';
+import { getQuestions } from '../api'; //질문 데이터를 가져오는 함수
 import DateText from '../components/DateText';
 import ListPage from '../components/ListPage';
 import Card from '../components/Card';
@@ -14,7 +14,7 @@ function QuestionItem({ question }) {
     <Card className={styles.questionItem} key={question.title}>
       <div className={styles.info}>
         <p className={styles.title}>
-          <Link to={`/questions/${question.id}`}>{question.title}</Link>
+          <Link to={`/questions/${question.id}`}>{question.title}</Link> {/*질문 제목을 클릭하면 상세ㅔ페이지로 넘어갈 수 있는 링크 */}
         
         </p>
         <p className={styles.date}>

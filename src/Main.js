@@ -9,6 +9,7 @@ import WishlistPage from './pages/WishlistPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Mypage from './pages/Mypage';
+import Review from './pages/Review';
 
 function Main() {
   return (
@@ -28,6 +29,7 @@ function Main() {
           <Route path="signup" element={<SignupPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="mypage" element={<Mypage />} />
+          <Route path="review" element={<Review />} />
 
         </Route>
       </Routes>
