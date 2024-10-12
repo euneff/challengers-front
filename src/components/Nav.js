@@ -20,16 +20,20 @@ function Nav() {
         <ul className={styles.menu}>
           <li>
             <NavLink style={getLinkStyle} to="/courses">
+              카탈로그
+            </NavLink>
+          </li>
+          <li>
+            <NavLink style={getLinkStyle} to="/challenge">
               도전
             </NavLink>
           </li>
-         
+          
           <li>
             <NavLink style={getLinkStyle} to="/commu">
               게시판
             </NavLink>
           </li>
-          
           <li>
             <UserMenu />
           </li>

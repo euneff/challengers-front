@@ -3,7 +3,6 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import styles from './App.module.css';
 import './App.font.css';
-import CommuPage from '../pages/CommuPage';
 
 
 function App() {

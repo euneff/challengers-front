@@ -13,7 +13,7 @@ import Review from './pages/Review';
 import CommuPage from './pages/CommuPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Write from './pages/Write';
-
+import Challenge from './pages/Challenge';
 
 function Main() {
   return (
@@ -36,6 +36,7 @@ function Main() {
           <Route path="review" element={<Review />} />
           <Route path="commu" element={<CommuPage/>}/>
           <Route path="write" element={<Write />}/>
+          <Route path="challenge" element={<Challenge/>}/>
 
         </Route>
       </Routes>
