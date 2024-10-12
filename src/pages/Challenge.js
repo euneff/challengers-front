@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import './Challenge.css'; // 스타일을 위한 CSS 파일
 
-const Challenge = () => {
-  const [challenges, setChallenges] = useState([]); // 챌린지 목록
+const CommunityForm = () => {
+  const [challenges, setChallenges] = useState([]);
   const [newChallenge, setNewChallenge] = useState({
     title: '',
     status: '진행 중',
     reward: '',
     participants: []
-  }); // 새로운 챌린지 입력 상태
+  });
 
   // 입력 필드 변경 핸들러
   const handleInputChange = (e) => {
@@ -19,40 +20,34 @@ const Challenge = () => {
   const handleAddChallenge = () => {
     if (newChallenge.title.trim() && newChallenge.reward.trim()) {
       setChallenges([...challenges, { ...newChallenge, id: challenges.length + 1 }]);
-      setNewChallenge({ title: '', status: '진행 중', reward: '', participants: [] }); // 입력 초기화
+      setNewChallenge({ title: '', status: '진행 중', reward: '', participants: [] });
     }
+  };
+
+  // 챌린지 삭제 핸들러
+  const handleDeleteChallenge = (id) => {
+    setChallenges(challenges.filter((challenge) => challenge.id !== id));
   };
 
   return (
     <div className="community">
       <h1>챌린지 목록</h1>
 
-      {/* 챌린지 목록 표시 */}
-      {challenges.length > 0 ? (
-        challenges.map((challenge) => (
-          <div key={challenge.id} className="challenge">
-            <h2>{challenge.title}</h2>
-            <p>상태: {challenge.status}</p>
-            <p>보상: {challenge.reward}</p>
-
-            {/* 참가자 목록 */}
-            <h3>참가자 순위</h3>
-            <ul>
-              {challenge.participants.length > 0 ? (
-                challenge.participants.map((participant, index) => (
-                  <li key={index}>
-                    {participant.rank}위: {participant.name}
-                  </li>
-                ))
-              ) : (
-                <li>참가자가 없습니다.</li>
-              )}
-            </ul>
-          </div>
-        ))
-      ) : (
-        <p>등록된 챌린지가 없습니다.</p>
-      )}
+      {/* 챌린지 목록 그리드 */}
+      <div className="challenge-grid">
+        {challenges.length > 0 ? (
+          challenges.map((challenge) => (
+            <div key={challenge.id} className="challenge-card">
+              <h2>{challenge.title}</h2>
+              <p>상태: {challenge.status}</p>
+              <p>보상: {challenge.reward}</p>
+              <button onClick={() => handleDeleteChallenge(challenge.id)}>삭제</button>
+            </div>
+          ))
+        ) : (
+          <p>등록된 챌린지가 없습니다.</p>
+        )}
+      </div>
 
       {/* 새로운 챌린지 추가 */}
       <div className="add-challenge">
@@ -73,17 +68,18 @@ const Challenge = () => {
           <div>
             <label>상태:</label>
             <select name="status" value={newChallenge.status} onChange={handleInputChange}>
+              <option value="모집 중">모집 중</option>
               <option value="진행 중">진행 중</option>
               <option value="종료">종료</option>
             </select>
           </div>
 
           <div>
-            <label>보상:</label>
+            <label>참가비:</label>
             <input
               type="text"
               name="reward"
-              placeholder="챌린지 보상"
+              placeholder="참가비"
               value={newChallenge.reward}
               onChange={handleInputChange}
               required
@@ -97,4 +93,4 @@ const Challenge = () => {
   );
 };
 
-export default Challenge;
+export default CommunityForm;
