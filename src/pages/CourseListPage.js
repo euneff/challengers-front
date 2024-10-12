@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import ListPage from '../components/ListPage';
-import Warn from '../components/Warn';
-import CourseItem from '../components/CourseItem';
 import styles from './CourseListPage.module.css';
 import searchBarStyles from '../components/SearchBar.module.css';
 import searchIcon from '../assets/search.svg';

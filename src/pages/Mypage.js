@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Mypage.scss';
+import axios from 'axios';
 
-function Mypage() {
+function Mypage({parsed}) {
   const [recentlyViewed, setRecentlyViewed] = useState([]);
   const [showRecentlyViewed, setShowRecentlyViewed] = useState(false);
+  const navigate = useNavigate();
+
 
   // 예시 도전 목록 - 실제 데이터는 API로 가져올 수 있습니다)
   const challenges = [
@@ -20,6 +23,31 @@ function Mypage() {
   const toggleRecentlyViewed = () => {
     setShowRecentlyViewed(!showRecentlyViewed);
   };
+
+  
+  const handleDeleteProfile = (e) => {
+    e.preventDefault();
+   
+
+    if (window.confirm('정말로 탈퇴하시겠습니까?')) {
+      axios
+        .delete(
+          // `${process.env.REACT_APP_PROXY_URL}/members/${parsed.memberId}`,
+          // {
+          //   headers: {
+          //     Authorization: 'Bearer ' + localStorage.getItem('ACCESS_TOKEN'),
+          //   },
+          // }
+        )
+        .then(() => {
+          localStorage.clear();
+          alert('그동안 이용해주셔서 감사합니다.');
+          navigate('/');
+        })
+        .catch((err) => alert(/*err.response.data.message*/));
+      } 
+    };
+
   return (
     
     <div className="mypage">
@@ -58,10 +86,10 @@ function Mypage() {
           <div className="whiteLeft">
             <p className="title">마이페이지</p>
             <div className="boxList">
-              <button className="boxLists">정보수정</button>
-              <button className="boxLists" onClick={toggleRecentlyViewed}>최근 본 도전</button>
-              <button className="boxLists">고객센터</button>
-              <button className="boxLists">회원탈퇴</button>
+              <button>정보수정</button>
+              <button onClick={toggleRecentlyViewed}>최근 본 도전</button>
+              <button>고객센터</button>
+              <button onClick={handleDeleteProfile}>회원탈퇴</button>
             </div>
           </div>
           <div className="whiteRight">

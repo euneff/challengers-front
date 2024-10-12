@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import App from './components/App';
 import HomePage from './pages/HomePage';
 import CoursePage from './pages/CoursePage';
@@ -10,6 +10,10 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Mypage from './pages/Mypage';
 import Review from './pages/Review';
+import CommuPage from './pages/CommuPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Write from './pages/Write';
+
 
 function Main() {
   return (
@@ -30,6 +34,8 @@ function Main() {
           <Route path="login" element={<LoginPage />} />
           <Route path="mypage" element={<Mypage />} />
           <Route path="review" element={<Review />} />
+          <Route path="commu" element={<CommuPage/>}/>
+          <Route path="write" element={<Write />}/>
 
         </Route>
       </Routes>

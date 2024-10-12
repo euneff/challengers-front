@@ -1,3 +1,8 @@
 .iGroup{
   margin-bottom: 0px 0px 20px;
 }
+
+.wrap{
+  justify-content: center;
+  align-items: center;
+}

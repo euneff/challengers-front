@@ -23,11 +23,13 @@ function Nav() {
               도전
             </NavLink>
           </li>
+         
           <li>
-            <NavLink style={getLinkStyle} to="/questions">
-              커뮤니티
+            <NavLink style={getLinkStyle} to="/commu">
+              게시판
             </NavLink>
           </li>
+          
           <li>
             <UserMenu />
           </li>
