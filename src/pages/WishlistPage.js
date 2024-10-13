@@ -31,12 +31,12 @@ function WishlistPage() {
         <>
           <Warn
             className={styles.emptyList}
-            title="담아 놓은 코스가 없어요."
-            description="카탈로그에서 나에게 필요한 코스를 찾아보세요."
+            title="담아 놓은 도전이 없어요."
+            description="나에게 필요한 도전을 찾아보세요."
           />
           <div className={styles.link}>
-            <Link to="/courses">
-              <Button as="div">코스 찾아보기</Button>
+            <Link to="/challenge">
+              <Button as="div">도전 찾아보기</Button>
             </Link>
           </div>
         </>
