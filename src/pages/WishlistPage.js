@@ -11,16 +11,18 @@ import styles from './WishlistPage.module.css';
 function WishlistPage() {
   const [courses, setCourses] = useState([]);
 
+  /*
   const handleDelete = (courseSlug) => {
     deleteWishlist(courseSlug);
     const nextCourses = getWishlist();
     setCourses(nextCourses);
-  };
+  }; 
 
   useEffect(() => {
     const nextCourses = getWishlist();
     setCourses(nextCourses);
   }, []);
+  */
 
   return (
     <Container className={styles.container}>
@@ -47,7 +49,7 @@ function WishlistPage() {
                 className={styles.delete}
                 src={closeButton}
                 alt="닫기"
-                onClick={() => handleDelete(course.slug)}
+                //onClick={() => handleDelete(course.slug)}
               />
             </li>
           ))}

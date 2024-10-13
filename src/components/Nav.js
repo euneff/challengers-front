@@ -18,11 +18,7 @@ function Nav() {
           <img src={logoImg} alt="Codethat Logo" />
         </Link>
         <ul className={styles.menu}>
-          <li>
-            <NavLink style={getLinkStyle} to="/courses">
-              카탈로그
-            </NavLink>
-          </li>
+
           <li>
             <NavLink style={getLinkStyle} to="/challenge">
               도전
