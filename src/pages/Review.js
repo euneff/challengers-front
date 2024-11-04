@@ -58,6 +58,8 @@ class CommuPage extends Component {
     });
   };
 
+
+
   // 상세 내용 모달 닫기
   handleClosePostDetail = () => {
     this.setState({

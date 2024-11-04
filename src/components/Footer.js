@@ -1,4 +1,4 @@
-import logo from '../assets/grayLogo.svg';
+
 import facebookIcon from '../assets/facebook.svg';
 import twitterIcon from '../assets/twitter.svg';
 import instagramIcon from '../assets/instagram.svg';
@@ -23,7 +23,7 @@ function Footer() {
           <li>주소 | 전북특별자치도 익산시 익산대로  </li>
         </ul>
         <div className={styles.icons}>
-          <img src={logo} alt="codethat" />
+          {/* 로고 이미지 */}
           <div className={styles.sns}>
             <img src={facebookIcon} alt="facebook icon" />
             <img src={twitterIcon} alt="twitter icon" />

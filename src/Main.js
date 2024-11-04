@@ -14,6 +14,9 @@ import CommuPage from './pages/CommuPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Write from './pages/Write';
 import Challenge from './pages/Challenge';
+import CardList from './pages/CardList';
+import CardInfo from './pages/CardInfo';
+import Enroll from './pages/Enroll';
 
 function Main() {
   return (
@@ -37,6 +40,9 @@ function Main() {
           <Route path="commu" element={<CommuPage/>}/>
           <Route path="write" element={<Write />}/>
           <Route path="challenge" element={<Challenge/>}/>
+          <Route path="cardlist" element={<CardList/>}/>
+          <Route path="cardinfo" element={<CardInfo/>}/>
+          <Route path="enroll" element={<Enroll/>}/>
 
         </Route>
       </Routes>

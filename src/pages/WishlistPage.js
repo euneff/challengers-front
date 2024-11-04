@@ -23,11 +23,9 @@ function WishlistPage() {
     setCourses(nextCourses);
   }, []);
   */
-
   return (
     <Container className={styles.container}>
-      <h1 className={styles.title}>나의 위시리스트</h1>
-      {courses.length === 0 ? (
+
         <>
           <Warn
             className={styles.emptyList}
